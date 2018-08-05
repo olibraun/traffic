@@ -1,10 +1,11 @@
 class Car extends Vehicle {
-  constructor(x, y) {
+  constructor(x, y, colorString) {
     super();
     this.x = x;
     this.y = y;
     this.width = 50;
     this.height = 20;
+    this.color = colorString;
 
     this.acceleration = 2;
     this.deceleration = 2;
@@ -12,7 +13,7 @@ class Car extends Vehicle {
   }
 
   render() {
-    context.fillStyle = '#FF0000';
+    context.fillStyle = this.color;
     context.fillRect(this.x, this.y, this.width, this.height);
   }
 

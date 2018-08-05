@@ -9,8 +9,8 @@ context.fillStyle = '#606060'
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 // Create a car and render it
-const car1 = new Car(10, 10);
-const car2 = new Car(80, 10);
+const car1 = new Car(10, 10, '#FF0000');
+const car2 = new Car(80, 10, '#00FF00');
 car2.maxVelocity = 8;
 //car.render();
 
