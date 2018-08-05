@@ -8,11 +8,11 @@ const context = canvas.getContext('2d');
 context.fillStyle = '#606060'
 context.fillRect(0, 0, canvas.width, canvas.height);
 
-// Create a car and render it
-const car1 = new Car(10, 10, '#FF0000');
-const car2 = new Car(80, 10, '#00FF00');
-car2.maxVelocity = 8;
-//car.render();
+// Create cars
+const cars = [];
+cars.push(new Car(10, 10, '#FF0000'));
+cars.push(new Car(380, 10, '#00FF00'));
+cars[1].maxVelocity = 5;
 
 // Animate
 function main() {
@@ -20,7 +20,7 @@ function main() {
   context.fillStyle = '#606060'
   context.fillRect(0, 0, canvas.width, canvas.height);
 
-  [car1, car2].forEach(car => {
+  cars.forEach(car => {
     car.update();
     car.render();
   });

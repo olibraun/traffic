@@ -18,13 +18,35 @@ class Car extends Vehicle {
   }
 
   update() {
-    this.x += this.velocity;
-    this.velocity += this.acceleration;
+    const self = this;
+
+    cars.forEach(other => {
+      if(other !== self) {
+        if(this.wouldCollide(other)) {
+          this.velocity -= this.deceleration;
+        } else {
+          this.velocity += this.acceleration;
+        }
+      }
+    });
+
+    // Limit velocity
     if(this.velocity > this.maxVelocity) {
       this.velocity = this.maxVelocity;
     }
+    if(this.velocity < 0) {
+      this.velocity = 0;
+    }
+
+    // Update position
+    this.updatePosition();
+
+    // Handle left and right side of the road
     if(this.x > canvas.width) {
       this.x = -this.width;
+    }
+    if(this.x < 0) {
+      this.x = canvas.width;
     }
   }
 }
