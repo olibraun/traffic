@@ -9,8 +9,10 @@ context.fillStyle = '#606060'
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 // Create a car and render it
-const car = new Car(10, 10);
-car.render();
+const car1 = new Car(10, 10);
+const car2 = new Car(80, 10);
+car2.maxVelocity = 8;
+//car.render();
 
 // Animate
 function main() {
@@ -18,8 +20,10 @@ function main() {
   context.fillStyle = '#606060'
   context.fillRect(0, 0, canvas.width, canvas.height);
 
-  car.update();
-  car.render();
+  [car1, car2].forEach(car => {
+    car.update();
+    car.render();
+  });
 
   requestAnimationFrame(main);
 }
