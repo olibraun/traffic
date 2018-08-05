@@ -7,9 +7,18 @@ class Vehicle {
     this.y = 0;
     this.width = 0;
     this.height = 0;
+
+    this.velocity = 0;
+    this.acceleration = 0;
+    this.deceleration = 0;
+    this.maxVelocity = 0;
   }
 
   render() {
     console.error('Must implement override render() method in extending class.');
+  }
+
+  update() {
+    console.error('Must implement override update() method in extending class.');
   }
 }

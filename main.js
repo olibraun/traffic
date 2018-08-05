@@ -7,3 +7,21 @@ const context = canvas.getContext('2d');
 // Fill canvas gray
 context.fillStyle = '#606060'
 context.fillRect(0, 0, canvas.width, canvas.height);
+
+// Create a car and render it
+const car = new Car();
+car.render();
+
+// Animate
+function main() {
+  // Fill canvas gray
+  context.fillStyle = '#606060'
+  context.fillRect(0, 0, canvas.width, canvas.height);
+
+  car.update();
+  car.render();
+
+  requestAnimationFrame(main);
+}
+
+main();
