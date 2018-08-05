@@ -9,7 +9,7 @@ context.fillStyle = '#606060'
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 // Create a car and render it
-const car = new Car();
+const car = new Car(10, 10);
 car.render();
 
 // Animate

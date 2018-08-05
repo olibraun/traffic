@@ -1,8 +1,8 @@
 class Car extends Vehicle {
-  constructor() {
+  constructor(x, y) {
     super();
-    this.x = 10;
-    this.y = 10;
+    this.x = x;
+    this.y = y;
     this.width = 50;
     this.height = 20;
 
